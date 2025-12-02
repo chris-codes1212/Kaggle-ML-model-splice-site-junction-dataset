@@ -1,18 +1,65 @@
-# DNA Splice Junction Machine Learning Clasifier
+# 🧬 DNA Splice Junction Machine Learning Classifier
 
-### Technical Background
-Splice sites are the bookends of introns to be removed. There are two main components of splice sites (the two ends); first there is the Exon-Intron site (EI site) which marks the end of an exon and beginning of an intron to be removed, and then there is the Intron-Exon site (IE site) which marks the end of the intron to be removed and the beginning of a new exon to be merged together with the one at the EI site. 
+This project builds machine learning models to classify DNA sequences
+based on whether they contain key splice junction sites---**Exon--Intron
+(EI)**, **Intron--Exon (IE)**, or **Neither**. Using classical ML
+algorithms and cross-validation, the work explores how shallow learning
+models can detect biologically meaningful splice site patterns within
+fixed-length nucleotide sequences.
 
-### Dataset
-The Splice-Junction Gene Sequences Dataset on Kaggle contains DNA samples (60 nucleotides long) from 1000 randomly selected individuals. The first 180 columns represent the nucleotides present at each location (broken out into patterns of 3 for each letter), and the last column contains the classification of the sequence as either containing an IE site, an EI site, or neither. (https://www.kaggle.com/datasets/muhammetvarl/splicejunction-gene-sequences-dataset)
+## 📘 Background
 
-### Goal
-The goal is to create a classification model that can determine if a 60 nucleotide sequence contains an IE site, EI site or neither.
-Exons are the coding DNA regions, and Introns are the regions that are removed.
+During RNA splicing, introns (non-coding regions) are removed and exons
+(coding regions) are joined together. Two key splice junction types
+define intron boundaries:
 
+-   **EI Site (Exon → Intron)** --- Marks the end of an exon and the
+    start of an intron.
+-   **IE Site (Intron → Exon)** --- Marks the end of an intron and the
+    beginning of a new exon.
 
-### Methods 
-For this project, I have created 3 shallow learning models using cross validation to determine the best hyperparameters for each model. The first model is a random forest classifier, the second is a gradient boost classifier (from sklearn), and the last uses an xgboost classifier.
+## 🧪 Dataset
 
-### Future Considerations
-IE sites are typically recognized by the GT dinucleotide and the EI site are typically recognized by the AG dinucelotide. There are other patterns/traits of introns and exons that would help a model recognize whether or not a region contains an IE or EI site, and a future consideration would be to build a Knowledge-Based Artificial Neural Network (KBANN) classification model 
+Dataset:
+https://www.kaggle.com/datasets/muhammetvarl/splicejunction-gene-sequences-dataset
+
+Characteristics: - \~1000 DNA sequences - 60 nucleotides each - 180
+encoded features - Labels: EI, IE, N
+
+## 🎯 Goal
+
+Classify sequences into EI, IE, or Neither.
+
+## 🧠 Methods
+
+Models used: - Random Forest - Gradient Boosting - XGBoost
+
+All models tuned with cross‑validation.
+
+## 🔮 Future Work
+
+-   Motif-based features (GT/AG)
+-   KBANN
+-   Deep learning approaches
+
+## 🛠 Run Instructions
+
+Install:
+
+``` bash
+pip install numpy pandas scikit-learn xgboost
+```
+
+Run:
+
+``` bash
+jupyter notebook
+```
+
+## 🤝 Contributions
+
+PRs and issues welcome.
+
+## 📄 License
+
+MIT recommended.
